@@ -7,10 +7,15 @@ This project is an animation of bouncing balls with the addition of falling snow
 ##Installation and Usage
 
 creating package.json file
+
  npm init -y
+
 installation typescript
+
  npm i --save-dev typescript
+
 creating tsconfig.json file
+
   npx tsc --init
 
 ##Examples
