@@ -17,65 +17,7 @@ creating tsconfig.json file
 
 Code examples and comments can be found in the source file main.ts, which represents TypeScript code for creating and animating bouncing balls.
 
-class BouncingBall {
-  res: number;
-  x: number;
-  y: number;
-  radius: number;
-  velocityX: number;
-  velocityY: number;
-  gravity: number;
-  friction: number;
-  color_hex: string;
-  opacity: number;
-  constructor(x: number, y: number) {
-    this.res;
-    this.x = x;
-    this.y = y;
-    this.radius = 40;
-    this.velocityX = randomNum(1, 15);
-    this.velocityY = randomNum(1, 15);
-    this.gravity = Math.max(Math.random(), 0.5);
-    this.friction = Math.max(Math.random(), 0.5);
-    this.color_hex =
-      "#" + [...Array(6)].map(() => randomNum(0, 16).toString(16)).join("");
-    this.opacity = 255;
-  }
-  drawBall(): void {
-    if (!context) return;
-    context.beginPath();
-    const gradient = context.createRadialGradient(
-      this.x,
-      this.y,
-      0,
-      this.x,
-      this.y,
-      this.radius
-    );
-    gradient.addColorStop(0, "rgba(255, 255, 255, 0.8)");
-    gradient.addColorStop(1, this.color_hex + this.opacity.toString(16));
-    context.fillStyle = gradient;
-    context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    context.strokeStyle = "#333";
-    context.lineWidth = 2;
-    context.stroke();
-    context.fill();
-  }
-  drawBallText(): void {
-    if (!context) return;
-    let x = Math.round(this.x);
-    let y = Math.round(this.y);
-    let vx = Math.round(this.velocityY);
-    let vy = Math.round(this.velocityY);
-    let text = `x: ${x}, y: ${y}, vx: ${vx}, vy: ${vy}`;
-    context.font = "15px Arial";
-    context.fillStyle = "#ffffff";
-    context.fillText(text, this.x + this.radius + 5, this.y);
-    context.beginPath();
-    context.moveTo(this.x - this.radius, this.y + this.radius);
-    context.lineTo(this.x + this.radius, this.y + this.radius);
-    context.stroke();
-  }
+
   moveBall(deltaTime: number): void {
     if (this.y + this.radius < canvas?.height) {
       this.velocityY += 1;
@@ -96,7 +38,7 @@ class BouncingBall {
       this.velocityX *= this.friction;
     }
   }
-}
+
 
 ##Additional Effects
 
