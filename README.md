@@ -16,6 +16,7 @@ creating tsconfig.json file
 ##Examples
 
 Code examples and comments can be found in the source file main.ts, which represents TypeScript code for creating and animating bouncing balls.
+
 class BouncingBall {
   res: number;
   x: number;
