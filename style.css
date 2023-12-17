@@ -1,0 +1,10 @@
+body {
+    background: url('interior-christmas-magic-glowing-tree-fireplace-royalty-free-image-1628537941.jpg') no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#btn {
+    position: absolute;
+    z-index: 10000;
+}
