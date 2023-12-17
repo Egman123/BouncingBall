@@ -17,27 +17,10 @@ creating tsconfig.json file
 
 Code examples and comments can be found in the source file main.ts, which represents TypeScript code for creating and animating bouncing balls.
 
-
-  moveBall(deltaTime: number): void {
-    if (this.y + this.radius < canvas?.height) {
-      this.velocityY += 1;
-    }
-    this.y += this.velocityY;
-    this.x += this.velocityX;
-    if (this.y + this.radius >= canvas?.height) {
-      if (this.velocityY > 0) {
-        this.velocityY = -this.velocityY;
-      }
-
       this.velocityY *= this.gravity;
       this.res = this.velocityY;
       this.velocityX *= this.friction;
-    }
-    if (this.x + this.radius > canvas?.width || this.x - this.radius <= 0) {
-      this.velocityX = -this.velocityX;
-      this.velocityX *= this.friction;
-    }
-  }
+    
 
 
 ##Additional Effects
